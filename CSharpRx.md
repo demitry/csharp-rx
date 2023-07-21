@@ -45,6 +45,17 @@
 
 ## Course Introduction [1.]
 
+- Streams (stock market, sensors)
+- Push model instead of Pull
+- We want process this data just like static data in a list or DB
+- LINQ-like ops but reactive
+
+=> Reactive Extensions (Rx) let us do precisely this!
+
+And more... because processing is in real time
+
+LINQ, TPL
+
 ## Overview [2.]
 
 ## Observer Design Pattern [3.]
