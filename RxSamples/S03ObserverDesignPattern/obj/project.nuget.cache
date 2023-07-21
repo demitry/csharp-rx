@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vf0riUjy1/TzUa44rYdqE3PoQAj/UScFJKZqYJYtJozARcZW7Lf06KxaI8M3oRTWh6lLUojuxoL+kKbSkD1OfA==",
+  "success": true,
+  "projectFilePath": "F:\\NEW_JOB_2023\\git\\csharp-rx\\RxSamples\\S03ObserverDesignPattern\\S03ObserverDesignPattern.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dmitry\\.nuget\\packages\\jetbrains.annotations\\2023.2.0\\jetbrains.annotations.2023.2.0.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

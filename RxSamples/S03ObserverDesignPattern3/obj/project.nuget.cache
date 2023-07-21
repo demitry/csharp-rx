@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "C0ACNE/Rc9QzUBehMSEfzKgDe8c4DVcnZZ4cL0nLsE5D31cwoDC50xnC55EffLJdM68vVHTem6hTAS6OJdd1jg==",
+  "success": true,
+  "projectFilePath": "F:\\NEW_JOB_2023\\git\\csharp-rx\\RxSamples\\S03ObserverDesignPattern3\\S03ObserverDesignPattern3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\dmitry\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

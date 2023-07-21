@@ -4,6 +4,10 @@
     - [Course Introduction [1.]](#course-introduction-1)
     - [Overview [2.]](#overview-2)
     - [Observer Design Pattern [3.]](#observer-design-pattern-3)
+        - [Notify with INotifyPropertyChanged](#notify-with-inotifypropertychanged)
+        - [Use Event](#use-event)
+        - [BindingList](#bindinglist)
+        - [Problem](#problem)
     - [IObserver [4.]](#iobserver-4)
     - [IObservable [5.]](#iobservable-5)
     - [Quiz 1: Key Interfaces [  ]](#quiz-1-key-interfaces---)
@@ -58,7 +62,143 @@ LINQ, TPL
 
 ## Overview [2.]
 
+- Observer Design Pattern
+- IObserver < T >
+- IObservable < T >
+
 ## Observer Design Pattern [3.]
+
+### Notify with INotifyPropertyChanged
+
+```cs
+using JetBrains.Annotations;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace S03ObserverDesignPattern;
+
+public class Market : INotifyPropertyChanged
+{
+    private float volatility;
+
+    public float Volatility
+    {
+        get => volatility;
+        set
+        {
+            if(value.Equals(volatility)) return;
+            volatility = value;
+            OnPropertyChanged(nameof(Volatility));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    [NotifyPropertyChangedInvocator]
+    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = default)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        var market = new Market();
+        market.PropertyChanged += (sender, eventArgs) =>
+        {
+            if (eventArgs.PropertyName == "Volatility")
+            {
+                Console.WriteLine("Wow! Volatility was changed");
+            }
+        };
+
+        market.Volatility = 2.3F;
+    }
+}
+```
+
+### Use Event
+
+```cs
+namespace S03ObserverDesignPattern2;
+
+public class Market
+{
+    private List<float> prices = new List<float>();
+
+    public void AddPrice(float price)
+    {
+        prices.Add(price);
+        // Classic:
+        PriceAdded?.Invoke(sender: this, price);
+    }
+
+    // Classic:
+    public event EventHandler<float> PriceAdded;
+}
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        var market = new Market();
+        
+        // Subscribe:
+        market.PriceAdded += (sender, f) =>
+        {
+            Console.WriteLine($"We got a price of {f}");
+        };
+
+        market.AddPrice(100);
+    }
+}
+```
+
+### BindingList
+
+```cs
+namespace S03ObserverDesignPattern3;
+
+public class Market // observable
+{
+    public BindingList<float> Prices = new BindingList<float>();
+
+    public void AddPrice(float price)
+    {
+        Prices.Add(price);
+    }
+}
+
+internal class Program // observer
+{
+    static void Main(string[] args)
+    {
+        var market = new Market();
+
+        market.Prices.ListChanged += (sender, eventArgs) =>
+        {
+            if (eventArgs.ListChangedType == ListChangedType.ItemAdded)
+            {
+                if (sender != null)
+                {
+                    float price = ((BindingList<float>)sender)[eventArgs.NewIndex];
+                    Console.WriteLine($"Binding list got a price of {price}");
+                }
+            }
+        };
+
+        market.AddPrice(123);
+    }
+}
+```
+
+### Problem
+
+But what if market crashed or no new prices added and we don't know why?
+
+Create MarkedCrashed events?
 
 ## IObserver [4.]
 
