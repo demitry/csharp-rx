@@ -412,6 +412,66 @@ internal class Program
 
 ## Proxy and Broadcast [10.]
 
+```cs
+public static class ExtensionMethods
+{
+    // why it is not a good way to go?
+    public static IDisposable SubscribeTo<T>(this IObserver<T> observer, IObservable<T> observable) => observable.Subscribe(observer);
+}
+
+...
+        market.Subscribe(marketConsumer);
+        // or
+        //marketConsumer.SubscribeTo(market);
+```
+
+```cs
+public static class ExtensionMethods
+{
+    // why it is not a good way to go?
+    //public static IDisposable SubscribeTo<T>(this IObserver<T> observer, IObservable<T> observable) => observable.Subscribe(observer);
+
+    public static IDisposable Inspect<T>(this IObservable<T> self, string name) =>
+        self.Subscribe(
+            x => Console.WriteLine($"{name} has generated value {x}"),
+            ex => Console.WriteLine($"{name} has generated exception {ex.Message}"),
+            () => Console.WriteLine($"{name} has completed")
+            );
+
+    public static IObserver<T> OnNext<T>(this IObserver<T> self, params T[] args)
+    {
+        foreach ( var arg in args )
+            self.OnNext(arg);
+        
+        return self;
+    }
+}
+```
+
+
+```cs
+using System.Reactive.Subjects;
+
+namespace S10ProxyAndBroadcast;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        var market = new Subject<float>(); // observable
+
+        var marketConsumer = new Subject<float>(); // observer of market
+                                                   // observable (Inspect)
+        market.Subscribe(marketConsumer);
+
+        marketConsumer.Inspect("market consumer");
+        
+        market.OnNext(1, 2, 3, 4);
+        market.OnCompleted();
+    }
+}
+```
+
 ## ReSubject [11.]
 
 ## BehaviorSubject [12.]
