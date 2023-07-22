@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S09Unsubscribing", "S09Unsu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10ProxyAndBroadcast", "S10ProxyAndBroadcast\S10ProxyAndBroadcast.csproj", "{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S11ReplaySubject", "S11ReplaySubject\S11ReplaySubject.csproj", "{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
