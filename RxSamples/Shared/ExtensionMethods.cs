@@ -1,4 +1,4 @@
-﻿namespace S10ProxyAndBroadcast;
+﻿namespace Shared;
 
 public static class ExtensionMethods
 {
