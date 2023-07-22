@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S13AsyncSubject", "S13AsyncSubject\S13AsyncSubject.csproj", "{9B43B681-0EDA-4966-A003-815A0A1A1E4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S14ImplementingIObservable", "S14ImplementingIObservable\S14ImplementingIObservable.csproj", "{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{9B43B681-0EDA-4966-A003-815A0A1A1E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B43B681-0EDA-4966-A003-815A0A1A1E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B43B681-0EDA-4966-A003-815A0A1A1E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
