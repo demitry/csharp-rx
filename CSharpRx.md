@@ -14,6 +14,8 @@
     - [Summary [6.]](#summary-6)
     - [Overview [7.]](#overview-7)
     - [Subject [8.]](#subject-8)
+        - [Get rid of an IObservable](#get-rid-of-an-iobservable)
+        - [Get rid of an IObserver](#get-rid-of-an-iobserver)
     - [Unsubscribing [9.]](#unsubscribing-9)
     - [Proxy and Broadcast [10.]](#proxy-and-broadcast-10)
     - [ReSubject [11.]](#resubject-11)
@@ -293,6 +295,8 @@ Subject acts like both Observer and Observable
 
 So it can glued together with a Observer
 
+### Get rid of an IObservable
+
 ```cs
 using System.Reactive.Subjects;
 
@@ -337,6 +341,30 @@ internal class Program : IObserver<float>
     public void OnNext(float value)
     {
         Console.WriteLine($"Market gave us new value: {value}");
+    }
+}
+```
+
+### Get rid of an IObserver
+
+```cs
+internal class Program
+{
+    public Program()
+    {
+        var market = new Subject<float>();
+        market.Subscribe(
+            f => Console.WriteLine($"Price is {f}"),
+            () => Console.WriteLine("Sequence is complete")
+            );
+
+        market.OnNext(1.23f);
+        market.OnCompleted();
+    }
+
+    static void Main(string[] args)
+    {
+        new Program();
     }
 }
 ```

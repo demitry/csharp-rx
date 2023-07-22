@@ -2,6 +2,7 @@
 
 namespace S07Subjects;
 
+/*
 internal class Program : IObserver<float>
 {
     public Program()
@@ -20,7 +21,7 @@ internal class Program : IObserver<float>
         // I am calling it on a subject
         // And subject notifies the IObserver (Program)
         // about the fact that this has occurred.
-        //So we got rid of an IObservable
+        // So we got rid of an IObservable
     }
 
     static void Main(string[] args)
@@ -41,5 +42,27 @@ internal class Program : IObserver<float>
     public void OnNext(float value)
     {
         Console.WriteLine($"Market gave us new value: {value}");
+    }
+}
+*/
+
+
+internal class Program
+{
+    public Program()
+    {
+        var market = new Subject<float>();
+        market.Subscribe(
+            f => Console.WriteLine($"Price is {f}"),
+            () => Console.WriteLine("Sequence is complete")
+            );
+
+        market.OnNext(1.23f);
+        market.OnCompleted();
+    }
+
+    static void Main(string[] args)
+    {
+        new Program();
     }
 }
