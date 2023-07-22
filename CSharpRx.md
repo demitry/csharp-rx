@@ -22,7 +22,6 @@
     - [BehaviorSubject [12.]](#behaviorsubject-12)
     - [AsyncSubject [13.]](#asyncsubject-13)
     - [Implementing IObservable [14.]](#implementing-iobservable-14)
-    - [Quiz 2: Subjects [  ]](#quiz-2-subjects---)
     - [Summary [15.]](#summary-15)
     - [Overview [16.]](#overview-16)
     - [Simple Factory Methods [17.]](#simple-factory-methods-17)
@@ -671,9 +670,21 @@ namespace S14ImplementingIObservable
 }
 ```
 
-## Quiz 2: Subjects [  ]
-
 ## Summary [15.]
+
+Subject < T > is both IObservable and IObserver
+
+- A subject can thus act as a proxy between an observer and observable.
+
+Unsubscription via IDisposable
+
+- Subscribe() return IDisposable
+
+**ReplaySubject** - caches and replays all the values to any new subscriber
+
+**BehaviorSubject** - has a default value that is sent if no other value is provided **and** the sequence is completed
+
+**AsyncSubject** - stores the last value and publishes it when it completed
 
 ## Overview [16.]
 
