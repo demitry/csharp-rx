@@ -1,35 +1,41 @@
-﻿namespace S07Subjects;
+﻿using System.Reactive.Subjects;
 
-public class Market : IObservable<float>
-{
-    public IDisposable Subscribe(IObserver<float> observer)
-    {
-        throw new NotImplementedException();
-    }
-}
+namespace S07Subjects;
 
 internal class Program : IObserver<float>
 {
     public Program()
     {
-        var market = new Market();
+        // Subject acts like both Observer and Observable
+        // So it can glued together with a Observer (Program)
+        
+        var market = new Subject<float>();
         market.Subscribe(this);
+
+        market.OnNext(1.23f); // Post the value
+
+        //market.OnError(new Exception("oops"));
+        
+        market.OnCompleted(); // I am not calling Program.OnCompleted
+        // I am calling it on a subject
+        // And subject notifies the IObserver (Program)
+        // about the fact that this has occurred.
+        //So we got rid of an IObservable
     }
 
     static void Main(string[] args)
     {
-        // OnNext --> (OnError | OnCompleted) ? optional
-        // Bad practice to call OnNext again. But it is possible.
+        new Program();
     }
 
     public void OnCompleted()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Sequence is complete");
     }
 
     public void OnError(Exception error)
     {
-        // Something went wrong in a sequence
+        Console.WriteLine($"We got an error: {error.Message}");
     }
 
     public void OnNext(float value)
