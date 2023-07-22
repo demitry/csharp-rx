@@ -273,10 +273,21 @@ IObservable -> PUSH -> OObserver
 
 Typically you will not implement either of this
 
-
 ## Overview [7.]
 
+- Subject < T >
+- Unsubscribing
+- Proxy abd Broadcast
+- ReplaySubject < T >
+- BehaviorSubject < T >
+- AsyncSubject < T >
+- Implementing IObservable< T >
+
 ## Subject [8.]
+
+IObservable and IObserver are now the part of .NET but the rest reactive stuff requires System.Reactive.
+
+nuget System.Reactive
 
 ## Unsubscribing [9.]
 

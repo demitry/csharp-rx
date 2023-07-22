@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33913.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S03ObserverDesignPattern", "S03ObserverDesignPattern\S03ObserverDesignPattern.csproj", "{6383FE40-75D2-4F01-B7F8-3CEE78CB4FAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S03ObserverDesignPattern", "S03ObserverDesignPattern\S03ObserverDesignPattern.csproj", "{6383FE40-75D2-4F01-B7F8-3CEE78CB4FAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S03ObserverDesignPattern2", "S03ObserverDesignPattern2\S03ObserverDesignPattern2.csproj", "{A76A16D3-DC95-4DF2-BE70-CE4B9BFDA19C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S03ObserverDesignPattern2", "S03ObserverDesignPattern2\S03ObserverDesignPattern2.csproj", "{A76A16D3-DC95-4DF2-BE70-CE4B9BFDA19C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S03ObserverDesignPattern3", "S03ObserverDesignPattern3\S03ObserverDesignPattern3.csproj", "{AEB3240E-30FA-4605-B57E-08B5A70B0FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S03ObserverDesignPattern3", "S03ObserverDesignPattern3\S03ObserverDesignPattern3.csproj", "{AEB3240E-30FA-4605-B57E-08B5A70B0FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S04Observer", "S04Observer\S04Observer.csproj", "{00024900-6BF1-45ED-9E5E-083BF8A13BA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S04Observer", "S04Observer\S04Observer.csproj", "{00024900-6BF1-45ED-9E5E-083BF8A13BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S07Subjects", "S07Subjects\S07Subjects.csproj", "{7F8168F4-0054-454D-98F4-6DABF3F8CB61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{00024900-6BF1-45ED-9E5E-083BF8A13BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00024900-6BF1-45ED-9E5E-083BF8A13BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00024900-6BF1-45ED-9E5E-083BF8A13BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8168F4-0054-454D-98F4-6DABF3F8CB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8168F4-0054-454D-98F4-6DABF3F8CB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8168F4-0054-454D-98F4-6DABF3F8CB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8168F4-0054-454D-98F4-6DABF3F8CB61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
