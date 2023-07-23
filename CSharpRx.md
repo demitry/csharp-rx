@@ -23,7 +23,7 @@
     - [AsyncSubject [13.]](#asyncsubject-13)
     - [Implementing IObservable [14.]](#implementing-iobservable-14)
     - [Summary [15.]](#summary-15)
-    - [Overview [16.]](#overview-16)
+    - [Section 3 Fundamental Sequence Operators Overview [16.]](#section-3-fundamental-sequence-operators-overview-16)
     - [Simple Factory Methods [17.]](#simple-factory-methods-17)
     - [Observable.Create [18.]](#observablecreate-18)
     - [Sequence Generators [19.]](#sequence-generators-19)
@@ -686,7 +686,17 @@ Unsubscription via IDisposable
 
 **AsyncSubject** - stores the last value and publishes it when it completed
 
-## Overview [16.]
+## Section 3 Fundamental Sequence Operators Overview [16.]
+
+- Simple Factory Methods
+- Observable.Create
+- single value or sequence
+- Sequence Generators
+- Convert existing constructs into Observables
+- Sequence Filtering
+- Sequence Inspection
+- Sequence Transformation
+- Sequence Aggregation
 
 ## Simple Factory Methods [17.]
 
