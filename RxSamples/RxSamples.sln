@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S17SimpleFactoryMethods", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S18ObservableCreate", "S18ObservableCreate\S18ObservableCreate.csproj", "{7AF174D9-760E-4213-A5AA-94DD89857581}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S19SequenceGenerators", "S19SequenceGenerators\S19SequenceGenerators.csproj", "{FB10D8AC-AC70-418C-B97B-06111253544D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{7AF174D9-760E-4213-A5AA-94DD89857581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF174D9-760E-4213-A5AA-94DD89857581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF174D9-760E-4213-A5AA-94DD89857581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB10D8AC-AC70-418C-B97B-06111253544D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB10D8AC-AC70-418C-B97B-06111253544D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB10D8AC-AC70-418C-B97B-06111253544D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB10D8AC-AC70-418C-B97B-06111253544D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
