@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S13AsyncSubject", "S13Async
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S14ImplementingIObservable", "S14ImplementingIObservable\S14ImplementingIObservable.csproj", "{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S17SimpleFactoryMethods", "S17SimpleFactoryMethods\S17SimpleFactoryMethods.csproj", "{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
