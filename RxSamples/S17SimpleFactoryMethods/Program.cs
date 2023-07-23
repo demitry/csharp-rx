@@ -21,5 +21,6 @@ internal class Program
 
         var obsThrow = Observable.Throw<int>(new Exception("oops"));
         obsThrow.Inspect("obsThrow");
+        // obsThrow has generated exception oops
     }
 }
