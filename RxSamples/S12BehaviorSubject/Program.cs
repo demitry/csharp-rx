@@ -16,7 +16,7 @@ internal class Program
     static void Main(string[] args)
     {
         var sensorReading = new BehaviorSubject<double>(-1.0);
-        //Initializes a new instance of the BehaviorSubject<T> class which creates a subject that caches its last value and starts with the specified value.
+        //	Initializes a new instance of the BehaviorSubject<T> class which creates a subject that caches its last value and starts with the specified value.
 
         sensorReading.Inspect("sensor");
         
