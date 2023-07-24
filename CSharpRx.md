@@ -30,6 +30,8 @@
     - [Converting Into Observables [20.]](#converting-into-observables-20)
         - [Observable.Start](#observablestart)
         - [Observable.FromEventPattern](#observablefromeventpattern)
+        - [Task.ToObservable](#tasktoobservable)
+        - [IEnumerable.ToObservable](#ienumerabletoobservable)
     - [Sequence Filtering [21.]](#sequence-filtering-21)
     - [Sequence Inspection [22.]](#sequence-inspection-22)
     - [Sequence Transformation [23.]](#sequence-transformation-23)
@@ -1040,6 +1042,22 @@ internal class Program
     }
 ```
 
+### Task.ToObservable()
+
+```cs
+    var task = Task.Factory.StartNew(() => "Test");
+    var source = task.ToObservable();
+    source.Inspect("task");
+    Console.ReadLine();
+```
+
+### IEnumerable.ToObservable()
+
+```cs
+    var items = new List<int> { 1, 2, 3 };
+    var source = items.ToObservable();
+    source.Inspect("ItemsToObservable");
+```
 
 ## Sequence Filtering [21.]
 

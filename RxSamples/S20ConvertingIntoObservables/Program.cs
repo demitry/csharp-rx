@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Reactive.Linq;
+using System.Reactive.Threading.Tasks;
 using Shared;
 
 namespace S20ConvertingIntoObservables;
@@ -27,7 +28,24 @@ internal class Program
     static void Main(string[] args)
     {
         //TestObservableStart();
-        TestFromEventPattern();
+        //TestFromEventPattern();
+        TestTaskToObservable();
+        TestIEnumerablesToObservable();
+    }
+
+    static void TestIEnumerablesToObservable()
+    {
+        var items = new List<int> { 1, 2, 3 };
+        var source = items.ToObservable();
+        source.Inspect("ItemsToObservable");
+    }
+
+    static void TestTaskToObservable()
+    {
+        var task = Task.Factory.StartNew(() => "Test");
+        var source = task.ToObservable();
+        source.Inspect("task");
+        Console.ReadLine();
     }
 
     static void TestFromEventPattern()
