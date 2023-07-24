@@ -1,13 +1,52 @@
-﻿using System.Reactive.Linq;
+﻿using System.Diagnostics;
+using System.Reactive.Linq;
 using Shared;
 
 namespace S20ConvertingIntoObservables;
 
 internal class Program
 {
+    public class Market
+    {
+        private float price;
+        public float Price
+        {
+            get => price;
+            set => price = value;
+        }
+
+        public void ChangePrice(float price)
+        {
+            Price = price;
+            PriceChanged?.Invoke(this, price);
+        }
+
+        public event EventHandler<float> PriceChanged;
+    }
+
     static void Main(string[] args)
     {
-        TestObservableStart();
+        //TestObservableStart();
+        TestFromEventPattern();
+    }
+
+    static void TestFromEventPattern()
+    {
+        var market = new Market();
+        var priceChanges = Observable.FromEventPattern<float>
+            (
+                h => market.PriceChanged += h,
+                h => market.PriceChanged -= h
+            );
+
+        //priceChanges.Inspect("price changes");
+        priceChanges.Subscribe (x => Console.WriteLine(x.EventArgs));
+
+        market.ChangePrice(1.5f);
+        market.ChangePrice(2.4f);
+        market.ChangePrice(3.2f);
+        //Output with our Inspect():
+        //price changes has generated value System.Reactive.EventPattern`1[System.Single]
     }
 
     static void ThreadProc(Object stateInfo)
