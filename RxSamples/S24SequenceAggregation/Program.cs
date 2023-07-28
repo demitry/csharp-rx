@@ -2,11 +2,53 @@
 using Shared;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Xml.Linq;
 
 //
 internal class Program
 {
     static void Main(string[] args)
+    {
+        //TestCountMinMaxAverage();
+
+        TestFirstAsyncFirstOrDefaultAsync();
+
+    }
+
+    static void TestFirstAsyncFirstOrDefaultAsync()
+    {
+        var replay = new ReplaySubject<int>();
+
+        replay.OnNext(-1);
+        replay.OnNext(2);
+        replay.OnCompleted(); // it is replay subj so san subscribe after
+
+        replay.FirstAsync(i => i > 0) // First() is deprecated
+            .Inspect("FirstAsync");
+
+        //FirstAsync has generated value 2
+        //FirstAsync has completed
+
+        //return Observable that yields the actual value
+        //public static IObservable<TSource> FirstAsync<TSource>(this IObservable<TSource> source, Func<TSource, bool> predicate)
+
+        // What is we have no value > 0 ?
+        var replay2 = new ReplaySubject<int>();
+        replay2.OnNext(-1);
+        replay2.OnCompleted();
+
+        //replay2.FirstAsync(i => i > 0).Inspect("FirstAsync2");
+
+        //FirstAsync2 has generated exception Sequence contains no matching element.
+        // The same behavior in LINQ
+
+        replay2.FirstOrDefaultAsync(i => i > 0).Inspect("FirstAsync2");
+        //Default for int is 0, so
+        //FirstAsync2 has generated value 0
+        //FirstAsync2 has completed
+    }
+
+    static void TestCountMinMaxAverage()
     {
         // Collapsing reactive sequence
         var values = Observable.Range(1, 5);
