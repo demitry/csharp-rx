@@ -11,8 +11,35 @@ internal class Program
     {
         //TestCountMinMaxAverage();
 
-        TestFirstAsyncFirstOrDefaultAsync();
+        //TestFirstAsyncFirstOrDefaultAsync();
 
+        TestSingleAsyncSingleOrDefaultAsync();
+    }
+
+    static void TestSingleAsyncSingleOrDefaultAsync()
+    {
+        var replay = new ReplaySubject<int>();
+        replay.OnNext(2);
+        replay.OnCompleted();
+        replay.SingleAsync().Inspect("SingleAsync");
+        //SingleAsync has generated value 2
+        //SingleAsync has completed
+
+        // With the single value it is OK
+        // BUT
+        // if Sequence contains more than one element. => exception
+        var replay2 = new ReplaySubject<int>();
+        replay2.OnNext(1);
+        replay2.OnNext(2);
+        replay2.OnCompleted();
+        replay2.SingleAsync().Inspect("SingleAsync2");
+        // SingleAsync2 has generated exception Sequence contains more than one element.
+
+        var replay3 = new ReplaySubject<int>();
+        replay3.OnCompleted();
+        replay3.SingleOrDefaultAsync().Inspect("SingleOrDefaultAsync");
+        //SingleOrDefaultAsync has generated value 0
+        //SingleOrDefaultAsync has completed
     }
 
     static void TestFirstAsyncFirstOrDefaultAsync()
