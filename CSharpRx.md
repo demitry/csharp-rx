@@ -37,6 +37,7 @@
     - [Sequence Transformation [23.]](#sequence-transformation-23)
         - [Select, OfType, Cast, Timestamp, TimeInterval](#select-oftype-cast-timestamp-timeinterval)
         - [Materialization Debugging Info](#materialization-debugging-info)
+        - [Collapsing sequence of sequences into 1 sequence](#collapsing-sequence-of-sequences-into-1-sequence)
     - [Sequence Aggregation [24.]](#sequence-aggregation-24)
     - [Quiz 3: Fundamental Sequence Operators [  ]](#quiz-3-fundamental-sequence-operators---)
     - [Summary [25.]](#summary-25)
@@ -1256,7 +1257,7 @@ internal class Program
         // in LINQ terminology, when materialize a IEnumerable -
         // what you really do - a converting to a List or another collection
         // In Reactive Extensions materialization/dematerialization is 
-        // ABSOLUTEKY DIFFERENT THING:
+        // ABSOLUTELY DIFFERENT THING:
         // You generate some kind of debugging information for a particular sequence:
 
         var seq = Observable.Range(0, 4);
@@ -1311,6 +1312,70 @@ internal class Program
         Dematerialize has completed
         */
     }
+```
+
+### Collapsing sequence of sequences into 1 sequence
+
+```cs
+        // 1  1 2  1 2 3  1 2 3 4
+        //var seq = Observable.Range(1, 4)
+        //    .SelectMany(x => Observable.Range(1, x))
+        //    .Inspect("SelectMany");
+        /*
+        SelectMany has generated value 1
+        SelectMany has generated value 1
+        SelectMany has generated value 2
+        SelectMany has generated value 1
+        SelectMany has generated value 2
+        SelectMany has generated value 1
+        SelectMany has generated value 3
+        SelectMany has generated value 2
+        SelectMany has generated value 3
+        SelectMany has generated value 4
+        SelectMany has completed
+        */
+
+        // You cannot expect that everything will be exact in order
+        // 
+
+        // You can specify 
+        //var seq2 = Observable.Range(1, 4, 
+        //    scheduler: Scheduler.Immediate)
+        //.SelectMany(x => Observable.Range(1, x))
+        //.Inspect("SelectManySchedulerImmediate");
+
+        /*
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 3
+        SelectManySchedulerImmediate has generated value 3
+        SelectManySchedulerImmediate has generated value 4
+        SelectManySchedulerImmediate has completed
+         */
+
+        var seq3 = 
+            Observable.Range(1, 4, scheduler: Scheduler.Immediate)
+            .SelectMany(x => Observable.Range(1, x, scheduler: Scheduler.Immediate))
+            .Inspect("SelectManySchedulerImmediate");
+
+        /*
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 3
+        SelectManySchedulerImmediate has generated value 1
+        SelectManySchedulerImmediate has generated value 2
+        SelectManySchedulerImmediate has generated value 3
+        SelectManySchedulerImmediate has generated value 4
+        SelectManySchedulerImmediate has completed 
+        */
 ```
 
 ## Sequence Aggregation [24.]
