@@ -1,5 +1,6 @@
 ﻿namespace S24SequenceAggregation;
 using Shared;
+using System;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Xml.Linq;
@@ -13,7 +14,51 @@ internal class Program
 
         //TestFirstAsyncFirstOrDefaultAsync();
 
-        TestSingleAsyncSingleOrDefaultAsync();
+        //TestSingleAsyncSingleOrDefaultAsync();
+
+        //TestAggregate();
+
+        TestRunningSum();
+    }
+
+    static void TestRunningSum()
+    {
+        var subject = new Subject<double>();
+        subject.Scan(0.0, (p, c) => p + c).Inspect("scan");
+        subject.OnNext(1, 2, 3, 4);
+        //scan has generated value 1
+        //scan has generated value 3
+        //scan has generated value 6
+        //scan has generated value 10
+    }
+
+    static void TestAggregate()
+    {
+        var replay = new ReplaySubject<int>();
+        replay.OnNext(-1);
+        replay.OnNext(2);
+        replay.OnCompleted();
+        replay.Sum().Inspect("Sum");
+        //Sum has generated value 1
+        //Sum has completed
+
+        // What if "running", "continious" Sum() ?
+        // What if we want to comment replay.OnCompleted();
+        // What if we want to remove restriction OnCompleted
+
+        var subject = new Subject<double>();
+        int power = 1;
+
+        subject.Aggregate(
+             0.0, 
+             (partialResult, currentValue) => 
+                partialResult + Math.Pow(currentValue, partialResult++))
+            .Inspect("poly");
+
+        // 1, 2, 4
+        // 1^1 + 2^2 + 4^3
+
+        subject.OnNext(1, 2, 4).OnCompleted();
     }
 
     static void TestSingleAsyncSingleOrDefaultAsync()

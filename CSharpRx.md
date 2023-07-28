@@ -42,6 +42,8 @@
         - [Count, Min, Max, Average](#count-min-max-average)
         - [FirstAsync and FirstOrDefaultAsync](#firstasync-and-firstordefaultasync)
         - [SingleAsync, SingleOrDefaultAsync](#singleasync-singleordefaultasync)
+        - [Aggregate](#aggregate)
+        - [Running, continuous Sum values - Scan](#running-continuous-sum-values---scan)
     - [Quiz 3: Fundamental Sequence Operators [  ]](#quiz-3-fundamental-sequence-operators---)
     - [Summary [25.]](#summary-25)
     - [Overview [26.]](#overview-26)
@@ -1494,6 +1496,49 @@ internal class Program
         //SingleOrDefaultAsync has generated value 0
         //SingleOrDefaultAsync has completed
 ```
+
+### Aggregate
+
+```cs
+        var replay = new ReplaySubject<int>();
+        replay.OnNext(-1);
+        replay.OnNext(2);
+        replay.OnCompleted();
+        replay.Sum().Inspect("Sum");
+        //Sum has generated value 1
+        //Sum has completed
+
+        // What if "running", "continuous" Sum() ?
+        // What if we want to comment replay.OnCompleted();
+        // What if we want to remove restriction OnCompleted
+
+        var subject = new Subject<double>();
+        int power = 1;
+
+        subject.Aggregate(
+             0.0, 
+             (partialResult, currentValue) => 
+                partialResult + Math.Pow(currentValue, partialResult++))
+            .Inspect("poly");
+
+        // 1, 2, 4
+        // 1^1 + 2^2 + 4^3
+
+        subject.OnNext(1, 2, 4).OnCompleted();
+```
+
+### Running, continuous Sum values - Scan()
+
+```cs
+        var subject = new Subject<double>();
+        subject.Scan(0.0, (p, c) => p + c).Inspect("scan");
+        subject.OnNext(1, 2, 3, 4);
+        //scan has generated value 1
+        //scan has generated value 3
+        //scan has generated value 6
+        //scan has generated value 10
+```
+
 ## Quiz 3: Fundamental Sequence Operators [  ]
 
 ## Summary [25.]
