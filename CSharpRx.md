@@ -1583,6 +1583,11 @@ internal class Program
 
 ## Overview [26.]
 
+- Exception Handling - it is not rty catch, different
+- Sequence Combinators - like LINQ
+- Time-Related Sequence Processing
+- Reactive Extensions Event Broker - Paractical Example with DI
+
 ## Exception Handling [27.]
 
 ## Sequence Combinators [28.]
