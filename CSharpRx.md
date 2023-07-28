@@ -1543,6 +1543,44 @@ internal class Program
 
 ## Summary [25.]
 
+- Observable.Return = single value + completion
+- Observable.Empty = NO value + completion
+- Observable.Never = NO value + NO completion
+- Observable.Throw = calls OnError() with an exception
+- Observable.Create
+  - creates a nonblocking stream
+  - Returns an IDisposable
+- Use the Disposable helper class
+  - Disposable.Empty - does nothing
+  - Disposable.Create - takes an unsubscribe action
+  
+- Observable.Range = set of int values + completion
+- Observable.Generate = custom generation
+- Observable.Interval = incremental long values every time period
+- Observable.Timer takes 2 args:
+  - Initial time delay
+  - Delay between calls
+  - Acts as Observable.Interval, generates consecutive long values every time period
+
+- Observable.Start = invoke delegate as Observable
+- Observable.FromEventPattern = use .NET events
+- ToObservable() = Convert a Task or IEnumerable to Observable
+- Other paradigms (INotifyPropertyChanged) supported in Rxx Nuget package
+- Rxx = Extensions for Reactive Extensions
+
+- Filtering operations:
+  - Where, Distinct, DistinctUntilChanged, IgnoreElements, Skip, Take/TakeWhile, Skip/SkipWhile, SkipLast, SkipUntil
+
+- Inspection operations:
+  - Any, All, Contains, DefaultIfEmpty, ElementAt, SequenceEqual, First/Last/Single(OrDefault)Async
+
+- Transformation operations:
+  - Select, OfType/Cast, Materialize/Dematerialize, SelectMAny
+
+- Aggregation operations:
+  - Count, Sum, Min, Max, Average,..., Aggregate, Scan
+
+
 ## Overview [26.]
 
 ## Exception Handling [27.]
