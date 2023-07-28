@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S23Meterialize", "S23Meteri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S23CollapsingSequences", "S23CollapsingSequences\S23CollapsingSequences.csproj", "{2E14AFFA-1FB2-4BA0-A231-166FB8EF14D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S24SequenceAggregation", "S24SequenceAggregation\S24SequenceAggregation.csproj", "{6D0E3CF0-573A-4F40-9712-DC0E4E23186F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{2E14AFFA-1FB2-4BA0-A231-166FB8EF14D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E14AFFA-1FB2-4BA0-A231-166FB8EF14D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E14AFFA-1FB2-4BA0-A231-166FB8EF14D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0E3CF0-573A-4F40-9712-DC0E4E23186F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0E3CF0-573A-4F40-9712-DC0E4E23186F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0E3CF0-573A-4F40-9712-DC0E4E23186F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0E3CF0-573A-4F40-9712-DC0E4E23186F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -39,6 +39,7 @@
         - [Materialization Debugging Info](#materialization-debugging-info)
         - [Collapsing sequence of sequences into 1 sequence](#collapsing-sequence-of-sequences-into-1-sequence)
     - [Sequence Aggregation [24.]](#sequence-aggregation-24)
+        - [Count, Min, Max, Average](#count-min-max-average)
     - [Quiz 3: Fundamental Sequence Operators [  ]](#quiz-3-fundamental-sequence-operators---)
     - [Summary [25.]](#summary-25)
     - [Overview [26.]](#overview-26)
@@ -1379,6 +1380,57 @@ internal class Program
 ```
 
 ## Sequence Aggregation [24.]
+
+### Count(), Min(), Max(), Average()
+
+- Count()
+- Min()
+- Max()
+- Average()
+
+```cs
+        // Collapsing reactive sequence
+        var values = Observable.Range(1, 5);
+        values.Inspect("Values");
+        values.Count().Inspect("count");
+        /*
+        Values has generated value 1
+        Values has generated value 2
+        Values has generated value 3
+        Values has generated value 4
+        Values has generated value 5
+        Values has completed
+        count has generated value 5
+        count has completed
+        */
+
+        var intSubj = new Subject<int>();
+        intSubj.Inspect("intSubj");
+        intSubj.Min().Inspect("min");
+        intSubj.Max().Inspect("max");
+        intSubj.Average().Inspect("avg"); // Average() returns double
+
+        intSubj.OnNext(2);
+        intSubj.OnNext(4);
+        intSubj.OnNext(5);
+        intSubj.OnNext(12);
+
+        intSubj.OnCompleted(); // NB!
+
+        /*
+            intSubj has generated value 2
+            intSubj has generated value 4
+            intSubj has generated value 5
+            intSubj has generated value 12
+            intSubj has completed
+            min has generated value 2
+            min has completed
+            max has generated value 12
+            max has completed
+            avg has generated value 5.75
+            avg has completed  
+         */
+```
 
 ## Quiz 3: Fundamental Sequence Operators [  ]
 
