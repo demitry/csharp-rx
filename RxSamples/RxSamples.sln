@@ -11,35 +11,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S03ObserverDesignPattern3",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S04Observer", "S04Observer\S04Observer.csproj", "{00024900-6BF1-45ED-9E5E-083BF8A13BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S07Subjects", "S07Subjects\S07Subjects.csproj", "{7F8168F4-0054-454D-98F4-6DABF3F8CB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S07Subjects", "S07Subjects\S07Subjects.csproj", "{7F8168F4-0054-454D-98F4-6DABF3F8CB61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S09Unsubscribing", "S09Unsubscribing\S09Unsubscribing.csproj", "{95061732-E893-47E5-AE7F-3ECA6EE37454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S09Unsubscribing", "S09Unsubscribing\S09Unsubscribing.csproj", "{95061732-E893-47E5-AE7F-3ECA6EE37454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10ProxyAndBroadcast", "S10ProxyAndBroadcast\S10ProxyAndBroadcast.csproj", "{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S10ProxyAndBroadcast", "S10ProxyAndBroadcast\S10ProxyAndBroadcast.csproj", "{92DD3D43-F2D2-4DC4-B789-FFAA87E9963D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S11ReplaySubject", "S11ReplaySubject\S11ReplaySubject.csproj", "{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S11ReplaySubject", "S11ReplaySubject\S11ReplaySubject.csproj", "{DF624D95-1CAC-4B67-AB12-98B8FD32DD7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S12BehaviorSubject", "S12BehaviorSubject\S12BehaviorSubject.csproj", "{7350EE1B-0694-4053-B2A8-8FBFC05F8124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S12BehaviorSubject", "S12BehaviorSubject\S12BehaviorSubject.csproj", "{7350EE1B-0694-4053-B2A8-8FBFC05F8124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{406BF176-46CB-4D80-9731-4A9904DBBB8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{406BF176-46CB-4D80-9731-4A9904DBBB8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S13AsyncSubject", "S13AsyncSubject\S13AsyncSubject.csproj", "{9B43B681-0EDA-4966-A003-815A0A1A1E4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S13AsyncSubject", "S13AsyncSubject\S13AsyncSubject.csproj", "{9B43B681-0EDA-4966-A003-815A0A1A1E4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S14ImplementingIObservable", "S14ImplementingIObservable\S14ImplementingIObservable.csproj", "{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S14ImplementingIObservable", "S14ImplementingIObservable\S14ImplementingIObservable.csproj", "{C68AD2A0-7179-430E-BA1C-1DD3ACDE11B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S17SimpleFactoryMethods", "S17SimpleFactoryMethods\S17SimpleFactoryMethods.csproj", "{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S17SimpleFactoryMethods", "S17SimpleFactoryMethods\S17SimpleFactoryMethods.csproj", "{B6F85E12-7186-48FE-AED5-5AECA9BB71ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S18ObservableCreate", "S18ObservableCreate\S18ObservableCreate.csproj", "{7AF174D9-760E-4213-A5AA-94DD89857581}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S18ObservableCreate", "S18ObservableCreate\S18ObservableCreate.csproj", "{7AF174D9-760E-4213-A5AA-94DD89857581}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S19SequenceGenerators", "S19SequenceGenerators\S19SequenceGenerators.csproj", "{FB10D8AC-AC70-418C-B97B-06111253544D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S19SequenceGenerators", "S19SequenceGenerators\S19SequenceGenerators.csproj", "{FB10D8AC-AC70-418C-B97B-06111253544D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S20ConvertingIntoObservables", "S20ConvertingIntoObservables\S20ConvertingIntoObservables.csproj", "{784BB131-B7A5-48D8-8569-05929896AA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S20ConvertingIntoObservables", "S20ConvertingIntoObservables\S20ConvertingIntoObservables.csproj", "{784BB131-B7A5-48D8-8569-05929896AA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S21SequenceFiltering", "S21SequenceFiltering\S21SequenceFiltering.csproj", "{8E169D6F-30A6-4ABF-A3D8-BEC56FE9FC50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S21SequenceFiltering", "S21SequenceFiltering\S21SequenceFiltering.csproj", "{8E169D6F-30A6-4ABF-A3D8-BEC56FE9FC50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S22SequenceInspection", "S22SequenceInspection\S22SequenceInspection.csproj", "{D5937B0A-4411-4E16-8EF5-F31ED9E824AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S22SequenceInspection", "S22SequenceInspection\S22SequenceInspection.csproj", "{D5937B0A-4411-4E16-8EF5-F31ED9E824AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S23SequenceTransformation", "S23SequenceTransformation\S23SequenceTransformation.csproj", "{E8306278-65DA-45DA-9A2B-9B2FC57CF4AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S23SequenceTransformation", "S23SequenceTransformation\S23SequenceTransformation.csproj", "{E8306278-65DA-45DA-9A2B-9B2FC57CF4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S23Meterialize", "S23Meterialize\S23Meterialize.csproj", "{55549D5C-F95C-4CF7-B038-DF0834C3A0E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{E8306278-65DA-45DA-9A2B-9B2FC57CF4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8306278-65DA-45DA-9A2B-9B2FC57CF4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8306278-65DA-45DA-9A2B-9B2FC57CF4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55549D5C-F95C-4CF7-B038-DF0834C3A0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55549D5C-F95C-4CF7-B038-DF0834C3A0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55549D5C-F95C-4CF7-B038-DF0834C3A0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55549D5C-F95C-4CF7-B038-DF0834C3A0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
