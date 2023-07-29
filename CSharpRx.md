@@ -54,7 +54,6 @@
     - [Quiz 4: Advanced Sequence Operators [  ]](#quiz-4-advanced-sequence-operators---)
     - [Summary [31.]](#summary-31)
     - [Course Summary [32.]](#course-summary-32)
-    - [Bonus Lecture: Other Courses at a Discount [33.]](#bonus-lecture-other-courses-at-a-discount-33)
 
 <!-- /TOC -->
 
@@ -1602,5 +1601,12 @@ internal class Program
 
 ## Course Summary [32.]
 
-## Bonus Lecture: Other Courses at a Discount [33.]
-
+- Rx relies on observable sequences implementing IObservable
+- Consumers implement IObserver
+  - OnNext -> (OnCompleted | OnError)
+- Subjects take care of much boilerplate code
+- Observable factory methods let us generate sequences
+- Operators are similar to LINQ, but:
+  - Time-related processing
+  - Processing of interactions between multiple streams
+  - Some Rx operations backported to LINQ (Ix.NET)
