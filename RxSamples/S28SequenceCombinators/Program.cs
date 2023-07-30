@@ -5,7 +5,7 @@ using Shared;
 
 namespace S28SequenceCombinators;
 
-//CombineLatest, Zip, And-Then-When (Zip Multiple Sequences), Concat, Repeat, StartWith, Amb(iguous), Merge
+//SequenceCombinators: CombineLatest, Zip, And-Then-When (Zip Multiple Sequences), Concat, Repeat, StartWith, Amb(iguous), Merge
 
 internal class Program
 {
