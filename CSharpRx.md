@@ -2213,6 +2213,26 @@ internal class Program
 
 ## Summary [31.]
 
+- **Catch (fallback)** continues with the fallback sequence on error in main sequence
+- **Catch<T, MyException>** catches MyException and continues with the provided sequence
+  - Use **Observable.Empty** to terminate
+- **Finally()** executes regardless of exception
+- **Retry(N)**, when an error is hit, unsubscribes and resubscribes a certain N number of times
+- **Concat** waits for sequences to complete and bundles them together
+- **Repeat(N)** repeats a completed sequence a number of times
+- **StartWith(1,2,3)** prepends a sequence with values
+- **Amb()** waits on several sequences and takes the one which produces a value first
+- **Merge()** takes values from several sequences and merge them into the one stream
+- **CombineLatest()** lets you provide a function to combining latest values from each of the selected streams
+- **Zip** bundles pairwise values from 2 sequences
+- If you want to zip > 2 sequences, use **And-Then-When**
+- **Buffer(N)** bundles N messages at a time into IList<T>
+  - Can also have a sliding window or **skip** messages
+- **Delay()** delays the entire sequence by the time amount
+- **Sample()** - performs samples from a sequence at a specified frequency. **TODO: understand it**
+- **Timeout()** generates an error if there is no message in a provided time period
+- **Throttle()** - just like Sample() but the wait window is reset whenever a message comes in. 
+
 ## Course Summary [32.]
 
 - Rx relies on observable sequences implementing IObservable
